@@ -1,5 +1,9 @@
 spring:
   profiles:
+<<<<<<< HEAD
+=======
+    active: dev
+>>>>>>> e57969cd97c49c5bb4b63f7d7b2c730c3d004909
 
 ---
 spring:
@@ -12,3 +16,7 @@ spring:
   profiles: test
   application:
     name: springcloud-config-test
+<<<<<<< HEAD
+=======
+
+>>>>>>> e57969cd97c49c5bb4b63f7d7b2c730c3d004909

@@ -1,0 +1,41 @@
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 7001
+spring:
+  application:
+    name: springcloud-config-eureka
+  profile: dev
+#Eureka配置
+eureka:
+  instance:
+    hostname: eureka7001.com #Eureka服务端的实列名称
+  client:
+    register-with-eureka: false #表示是否向Eureka注册中心注册自己
+    fetch-registry: false #如果为false则表示自己为注册中心
+    service-url:  #表示监控页面 这玩意
+      #这是单机配置：defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+      #集群（我们需要挂载别人）：
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+
+---
+server:
+  port: 7001
+spring:
+  application:
+    name: springcloud-config-eureka
+  profile: test
+#Eureka配置
+eureka:
+  instance:
+    hostname: eureka7001.com #Eureka服务端的实列名称
+  client:
+    register-with-eureka: false #表示是否向Eureka注册中心注册自己
+    fetch-registry: false #如果为false则表示自己为注册中心
+    service-url:  #表示监控页面 这玩意
+      #这是单机配置：defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+      #集群（我们需要挂载别人）：
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
